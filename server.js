@@ -17,12 +17,8 @@ const DB_PASSWORD = process.env.DB_PASSWORD;
 const db = knex({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    //need to create env variable for username
-    user : 'postgres',
-    //need to create env variable for password
-    password : '12437',
-    database : 'smart-brain'
+    host : process.env.DATABASE_URL,
+    ssl: true
   }
 });
 
