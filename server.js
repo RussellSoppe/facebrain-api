@@ -19,9 +19,9 @@ const db = knex({
   connection: {
     host : '127.0.0.1',
     //need to create env variable for username
-    user : DB_USER,
+    user : 'postgres',
     //need to create env variable for password
-    password : DB_PASSWORD,
+    password : '12437',
     database : 'smart-brain'
   }
 });
