@@ -38,7 +38,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req, res) => {res.send(database.users);})
+app.get('/', (req, res) => {res.send('Can you see me?');})
 app.post('/signin', (req, res) =>{signin.handleSignIn(req, res, db, bcrypt)})
 app.post ('/register', (req, res)=>{register.handleRegister(req, res, db, bcrypt)})
 // if we use /profile/:id we can then use request.params to grab any id in browser
@@ -47,5 +47,5 @@ app.put('/image', (req, res)=>{image.handleImage(req, res, db)})
 app.post('/imageurl', (req, res)=>{image.handleApiCall(req, res)})
 
 
-app.listen(process.env.PORT)
+app.listen(process.env.PORT || 3000)
 
